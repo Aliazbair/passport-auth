@@ -1,0 +1,20 @@
+<h1 class="mt-4">Dashbord</h1>
+<%
+ if(user.isAdmin){%>
+<h1>welcome admin : <strong class="text-danger"><%= user.name%></strong></h1>
+<p class="laed">
+    you can show all your product an can edit your forfile
+</p>
+<a href="/profile/<%= user.id%>">profile</a>
+<%}
+ else{%>
+<h1>welcome <strong><%= user.name%></strong></h1>
+<p class="laed">
+    you can show all your product an can edit your forfile
+</p>
+<a href="/profile/<%= user.id%>">profile</a>
+<%}
+
+  
+%>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>

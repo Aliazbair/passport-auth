@@ -1,0 +1,12 @@
+<% const {name,email,id}=user %>
+<h1>welcome <strong class="text-primary"><%= name %></strong> </h1>
+<h3 class="text-info">edit Your Profile</h3>
+<form action="/profile/<%=id%>" method="POST">
+    <div class="form-group">
+        <input type="text" value="<%= name %>" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" value="<%= email %>" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Edit Profile</button>
+</form>
