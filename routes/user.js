@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const byrtpt = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 const passport = require('passport')
 
 const User = require('../models/User')
@@ -67,7 +67,7 @@ router.post('/register', async (req, res) => {
 
       // Hash password
       byrtpt.genSalt(10, (err, salt) =>
-        byrtpt.hash(newUser.password, salt, (err, hash) => {
+      bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err
           // set password to hashed
           newUser.password = hash
